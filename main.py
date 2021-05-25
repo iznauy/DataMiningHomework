@@ -6,7 +6,7 @@ import pandas as pd
 import xgboost as xgb
 
 from sklearn.model_selection import KFold
-from sklearn.metrics import confusion_matrix, mean_squared_error
+from sklearn.metrics import confusion_matrix
 
 def display_dataset(df):
     # 展示数据整体信息
@@ -63,8 +63,10 @@ def drop_meaningless_data(df):
     df.drop(df[df['SPO2'] < 50].index, inplace=True)
 
 
-def model_selection():
-    pass
+def model_selection(cons, param_groups, X, y, k=10):
+
+    kf = KFold(n_splits=k)
+
 
 
 if __name__ == '__main__':

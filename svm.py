@@ -21,5 +21,6 @@ class SVM(object):
         return self.model.predict(X)
 
 
-    def clear(self):
-        self.model = make_pipeline(StandardScaler(), SVC(C=self.C, kernel=self.kernel))
+    @staticmethod
+    def new(C = 1.0, kernel='linear'):
+        return SVM(C=C, kernel=kernel)

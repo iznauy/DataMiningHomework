@@ -15,8 +15,9 @@ class XGBoost(object):
         pass
 
 
-    def clear(self):
-        pass
+    @staticmethod
+    def new():
+        return XGBoost()
 
 
 if __name__ == '__main__':

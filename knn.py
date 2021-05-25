@@ -25,7 +25,6 @@ class KNN(object):
         return np.array(y)
 
 
-    def clear(self):
-        self.X = None
-        self.y = None
-        self.scaler = None
+    @staticmethod
+    def new(k=10):
+        return KNN(k=k)
